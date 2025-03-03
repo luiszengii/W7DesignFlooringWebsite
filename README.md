@@ -1,53 +1,36 @@
-# Premium Floors Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Overview
+## Getting Started
 
-This project is a premium flooring company website showcasing various flooring products with a focus on timber and hard flooring options. The design conveys a luxury yet simple aesthetic, is fully responsive, and optimized for SEO.
+First, run the development server:
 
-## Brand Identity
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- **Brand Name**: Premium Floors
-- **Positioning**: Australia's largest wholesale supplier of timber and timber-look flooring
-- **Visual Identity**: Clean, minimal, light luxury design aesthetic
-- **Color Scheme**:
-  - Primary: White backgrounds (#FFFFFF)
-  - Secondary: Green accent color (#4B9B80) for buttons and highlights
-  - Text: Dark gray (#333333) for headings, medium gray (#666666) for body text
-  - Product showcase: Natural wooden tones
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Technical Stack
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### Front-end
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Framework**: Next.js
-- **CSS Framework**: TailwindCSS with custom configurations
-- **Component Library**: Material UI (MUI)
-- **State Management**: React Context API
-- **Animation**: Framer Motion for component animations
+## Learn More
 
-### SEO Considerations
+To learn more about Next.js, take a look at the following resources:
 
-- Semantic HTML structure
-- Proper heading hierarchy
-- Optimized meta tags
-- XML sitemap
-- Structured data for products
-- Fast loading times
-- Mobile-friendly design
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Responsive Breakpoints
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Mobile: 320px - 639px
-- Tablet: 640px - 1023px
-- Desktop: 1024px - 1279px
-- Large Desktop: 1280px and above
+## Deploy on Vercel
 
-### Accessibility Requirements
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- WCAG 2.1 AA compliance
-- Keyboard navigation support
-- Screen reader compatibility
-- Sufficient color contrast
-- Alternative text for images
-
-## Project Structure
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
