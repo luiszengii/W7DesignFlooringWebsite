@@ -29,8 +29,8 @@ export default function Hero() {
             Hard Flooring Specialists
           </Typography>
           <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-            Australia&apos;s largest wholesale supplier of timber & timber
-            look flooring including laminate, hybrid, bamboo, cork and vinyl.
+            Australia&apos;s largest wholesale supplier of timber & timber look
+            flooring including laminate, hybrid, bamboo, cork and vinyl.
           </Typography>
 
           <Paper
@@ -82,11 +82,11 @@ export default function Hero() {
           >
             <Box
               component="img"
-              src="/placeholder-main.jpg"
+              src="/interior.jpg"
               alt="Elegant interior with herringbone wooden flooring"
               sx={{
                 width: "85%",
-                height: "80%",
+                height: "90%",
                 objectFit: "cover",
                 borderRadius: "8px",
                 position: "absolute",
@@ -98,11 +98,11 @@ export default function Hero() {
             />
             <Box
               component="img"
-              src="/placeholder-secondary.jpg"
+              src="/interior2.jpg"
               alt="Luxurious bathroom with wooden flooring"
               sx={{
-                width: "60%",
-                height: "50%",
+                width: "50%",
+                height: "40%",
                 objectFit: "cover",
                 borderRadius: "8px",
                 position: "absolute",
