@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function Hero() {
+export default function Gallery() {
   return (
     <Container maxWidth="lg" sx={{ mt: 8, mb: 6 }}>
       <Grid container spacing={4}>
