@@ -53,7 +53,7 @@ export default function ProductGallery() {
         <GridItem className="span-two">
           <CardMedia
             component="img"
-            image="https://unsplash.com/photos/a-piece-of-wood-that-has-been-cut-in-half-_-H2GOBn3TU"
+            image="https://images.unsplash.com/photo-1515446134809-993c501ca304?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Timber Flooring"
           />
           <CardContent>
