@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import {
   Typography,
   Grid,
@@ -13,6 +14,35 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 
 export default function Hero() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (imageRef.current) {
+        const element = imageRef.current as HTMLElement;
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const distance = 1 - rect.top / windowHeight;
+        setScrollProgress(Math.min(Math.max(distance * 1.5, 0), 1.5));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const animationStyle = {
+    transform: `scale(${1 + scrollProgress * 0.2}) translateY(${
+      -2 * scrollProgress
+    }px)`,
+    boxShadow: `0px ${14 * scrollProgress}px ${
+      24 * scrollProgress
+    }px rgba(0, 0, 0, ${0.4 * scrollProgress})`,
+  };
+
   return (
     <Container maxWidth="lg" sx={{ mt: 8, mb: 6 }}>
       <Grid container spacing={4}>
@@ -74,6 +104,7 @@ export default function Hero() {
 
         <Grid item xs={12} md={6}>
           <Box
+            ref={imageRef}
             sx={{
               position: "relative",
               height: { xs: "450px", md: "600px" },
@@ -92,10 +123,10 @@ export default function Hero() {
                 position: "absolute",
                 top: 0,
                 left: 0,
-                zIndex: 1,
-                boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
-                transition: "all 0.5s ease-in-out",
-                "&:hover": {
+                zIndex: -1,
+                transition: "all 0.3s ease-in-out",
+                ...animationStyle,
+                "&:hover, &:active": {
                   transform: "scale(1.05) translateY(-2px)",
                   boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
                 },
@@ -113,13 +144,13 @@ export default function Hero() {
                 position: "absolute",
                 bottom: 0,
                 right: 0,
-                zIndex: 2,
-                boxShadow: "0px 4px 12px rgba(0,0,0,0.15)",
-                transition: "all 0.5s ease-in-out",
-                "&:hover": {
+                zIndex: 0,
+                transition: "all 0.3s ease-in-out",
+                ...animationStyle,
+                "&:hover, &:active": {
                   transform: "scale(1.05) translateY(-2px)",
                   boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.5)",
-                  zIndex: 3,
+                  zIndex: 0,
                 },
               }}
             />

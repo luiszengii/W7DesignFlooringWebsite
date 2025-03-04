@@ -24,9 +24,16 @@ const GridContainer = styled(Box)(({ theme }) => ({
 
 const GridItem = styled(Card)(({ theme }) => ({
   height: "100%",
+  transition: "all 0.3s ease-in-out",
+  cursor: "pointer",
   "& .MuiCardMedia-root": {
     height: "280px",
     objectFit: "cover",
+    transition: "all 0.3s ease-in-out",
+  },
+  "&:hover, &:active": {
+    transform: "scale(1.02) translateY(-4px)",
+    boxShadow: "0 12px 24px rgba(0,0,0,0.2)",
   },
   "&.span-two": {
     gridRow: "span 2",

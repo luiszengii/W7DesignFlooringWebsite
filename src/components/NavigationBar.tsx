@@ -51,7 +51,7 @@ export default function NavigationBar() {
                   lineHeight: 1,
                   textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
                   transition: "all 0.5s ease-in-out",
-                  "&:hover": {
+                  "&:hover, &:active": {
                     color: "rgb(255, 255, 255)",
                     letterSpacing: "0.02em",
                     textShadow:
