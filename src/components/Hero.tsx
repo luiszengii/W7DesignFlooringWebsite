@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function Gallery() {
+export default function Hero() {
   return (
     <Container maxWidth="lg" sx={{ mt: 8, mb: 6 }}>
       <Grid container spacing={4}>
@@ -94,6 +94,11 @@ export default function Gallery() {
                 left: 0,
                 zIndex: 1,
                 boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
+                transition: "all 0.5s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.05) translateY(-2px)",
+                  boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
+                },
               }}
             />
             <Box
@@ -110,6 +115,12 @@ export default function Gallery() {
                 right: 0,
                 zIndex: 2,
                 boxShadow: "0px 4px 12px rgba(0,0,0,0.15)",
+                transition: "all 0.5s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.05) translateY(-2px)",
+                  boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.5)",
+                  zIndex: 3,
+                },
               }}
             />
           </Box>

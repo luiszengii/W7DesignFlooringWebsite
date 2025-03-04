@@ -1,6 +1,41 @@
 "use client";
 
-import { Typography, Grid, Card, CardContent, CardMedia, Container } from "@mui/material";
+import {
+  Typography,
+  Card,
+  CardContent,
+  CardMedia,
+  Container,
+  Box,
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+
+const GridContainer = styled(Box)(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gap: "24px",
+  [theme.breakpoints.down("md")]: {
+    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+    "& .span-two": {
+      gridRow: "auto",
+    },
+  },
+}));
+
+const GridItem = styled(Card)(({ theme }) => ({
+  height: "100%",
+  "& .MuiCardMedia-root": {
+    height: "280px",
+    objectFit: "cover",
+  },
+  "&.span-two": {
+    gridRow: "span 2",
+    "& .MuiCardMedia-root": {
+      height: "100%",
+      minHeight: "584px",
+    },
+  },
+}));
 
 export default function ProductGallery() {
   return (
@@ -13,139 +48,91 @@ export default function ProductGallery() {
         Our Products
       </Typography>
 
-      <Grid container spacing={3}>
-        {/* Row 1 */}
-        <Grid
-          item
-          xs={12}
-          md={4}
-          sx={{ display: "flex", flexDirection: "column" }}
-        >
-          <Card sx={{ height: "100%", flex: 1 }}>
-            <CardMedia
-              component="img"
-              image="/timber-flooring.jpg"
-              alt="Timber Flooring"
-              sx={{
-                height: "100%",
-                minHeight: { xs: "300px", md: "600px" },
-                objectFit: "cover",
-              }}
-            />
-            <CardContent>
-              <Typography variant="h6">Timber Flooring</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+      <GridContainer>
+        {/* Timber Flooring - Spans 2 rows */}
+        <GridItem className="span-two">
+          <CardMedia
+            component="img"
+            image="/timber-flooring.jpg"
+            alt="Timber Flooring"
+          />
+          <CardContent>
+            <Typography variant="h6">Timber Flooring</Typography>
+          </CardContent>
+        </GridItem>
 
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardMedia
-              component="img"
-              height="280"
-              image="/laminate-flooring.jpg"
-              alt="Laminate Flooring"
-            />
-            <CardContent>
-              <Typography variant="h6">Laminate Flooring</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+        {/* Laminate Flooring */}
+        <GridItem>
+          <CardMedia
+            component="img"
+            image="/laminate-flooring.jpg"
+            alt="Laminate Flooring"
+          />
+          <CardContent>
+            <Typography variant="h6">Laminate Flooring</Typography>
+          </CardContent>
+        </GridItem>
 
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardMedia
-              component="img"
-              height="280"
-              image="/hybrid-flooring.jpg"
-              alt="Hybrid Flooring"
-            />
-            <CardContent>
-              <Typography variant="h6">Hybrid Flooring</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+        {/* Hybrid Flooring */}
+        <GridItem>
+          <CardMedia
+            component="img"
+            image="/hybrid-flooring.jpg"
+            alt="Hybrid Flooring"
+          />
+          <CardContent>
+            <Typography variant="h6">Hybrid Flooring</Typography>
+          </CardContent>
+        </GridItem>
 
-        {/* Row 2 */}
-        <Grid
-          item
-          xs={12}
-          md={4}
-          sx={{ display: { xs: "none", md: "block" } }}
-        />
+        {/* Vinyl Flooring */}
+        <GridItem>
+          <CardMedia
+            component="img"
+            image="/vinyl-flooring.jpg"
+            alt="Vinyl Flooring"
+          />
+          <CardContent>
+            <Typography variant="h6">Vinyl Flooring</Typography>
+          </CardContent>
+        </GridItem>
 
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardMedia
-              component="img"
-              height="280"
-              image="/vinyl-flooring.jpg"
-              alt="Vinyl Flooring"
-            />
-            <CardContent>
-              <Typography variant="h6">Vinyl Flooring</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+        {/* Premium Collection - Spans 2 rows */}
+        <GridItem className="span-two">
+          <CardMedia
+            component="img"
+            image="/premium-collection.jpg"
+            alt="Premium Collection"
+          />
+          <CardContent>
+            <Typography variant="h6">Premium Collection</Typography>
+          </CardContent>
+        </GridItem>
 
-        <Grid item xs={12} md={4}>
-          <Card sx={{ height: "100%" }}>
-            <CardMedia
-              component="img"
-              image="/premium-collection.jpg"
-              alt="Premium Collection"
-              sx={{
-                height: "100%",
-                minHeight: { xs: "300px", md: "280px" },
-                objectFit: "cover",
-              }}
-            />
-          </Card>
-        </Grid>
+        {/* Bamboo Flooring */}
+        <GridItem>
+          <CardMedia
+            component="img"
+            image="/bamboo-flooring.jpg"
+            alt="Bamboo Flooring"
+          />
+          <CardContent>
+            <Typography variant="h6">Bamboo Flooring</Typography>
+          </CardContent>
+        </GridItem>
 
-        {/* Row 3 */}
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardMedia
-              component="img"
-              height="280"
-              image="/bamboo-flooring.jpg"
-              alt="Bamboo Flooring"
-            />
-            <CardContent>
-              <Typography variant="h6">Bamboo Flooring</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardMedia
-              component="img"
-              height="280"
-              image="/special-edition.jpg"
-              alt="Special Edition"
-            />
-            <CardContent>
-              <Typography variant="h6">Special Edition</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        <Grid item xs={12} md={4}>
-          <Card>
-            <CardMedia
-              component="img"
-              height="280"
-              image="/bamboo-flooring.jpg"
-              alt="Additional Flooring Option"
-            />
-            <CardContent>
-              <Typography variant="h6">Engineered Flooring</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
+        {/* Special Edition */}
+        <GridItem>
+          <CardMedia
+            component="img"
+            image="/special-edition.jpg"
+            alt="Special Edition"
+          />
+          <CardContent>
+            <Typography variant="h6">Special Edition</Typography>
+          </CardContent>
+        </GridItem>
+      </GridContainer>
     </Container>
   );
 }

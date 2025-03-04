@@ -28,7 +28,7 @@ export default function Footer() {
                 textAlign: { xs: "center", md: "left" },
               }}
             >
-              PREMIUM FLOORS
+              W7 DESIGN FLOORS
             </Typography>
           </Grid>
 
@@ -36,10 +36,20 @@ export default function Footer() {
           <Grid item xs={12} md={6}>
             <Grid container spacing={2}>
               <Grid item xs={4}>
-                <Typography variant="h6" gutterBottom sx={{ textAlign: "left" }}>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ textAlign: "left" }}
+                >
                   Products
                 </Typography>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                  }}
+                >
                   <Button sx={{ justifyContent: "flex-start", px: 0, py: 0.5 }}>
                     Flooring Products
                   </Button>
@@ -53,10 +63,20 @@ export default function Footer() {
               </Grid>
 
               <Grid item xs={4}>
-                <Typography variant="h6" gutterBottom sx={{ textAlign: "left" }}>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ textAlign: "left" }}
+                >
                   Company
                 </Typography>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                  }}
+                >
                   <Button sx={{ justifyContent: "flex-start", px: 0, py: 0.5 }}>
                     About us
                   </Button>
@@ -70,10 +90,20 @@ export default function Footer() {
               </Grid>
 
               <Grid item xs={4}>
-                <Typography variant="h6" gutterBottom sx={{ textAlign: "left" }}>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={{ textAlign: "left" }}
+                >
                   Resources
                 </Typography>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                  }}
+                >
                   <Button sx={{ justifyContent: "flex-start", px: 0, py: 0.5 }}>
                     Customer portal
                   </Button>
@@ -89,12 +119,27 @@ export default function Footer() {
           </Grid>
 
           {/* Social Links */}
-          <Grid item xs={12} md={3} sx={{ textAlign: { xs: "center", md: "right" } }}>
-            <Box sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-end" }, gap: 2 }}>
+          <Grid
+            item
+            xs={12}
+            md={3}
+            sx={{ textAlign: { xs: "center", md: "right" } }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: { xs: "center", md: "flex-end" },
+                gap: 2,
+              }}
+            >
               <IconButton aria-label="Facebook" component="a" href="#facebook">
                 <FacebookIcon />
               </IconButton>
-              <IconButton aria-label="Instagram" component="a" href="#instagram">
+              <IconButton
+                aria-label="Instagram"
+                component="a"
+                href="#instagram"
+              >
                 <InstagramIcon />
               </IconButton>
               <IconButton aria-label="YouTube" component="a" href="#youtube">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import ThemeRegistry from '../components/ThemeRegistry';
+import ThemeRegistry from "../components/ThemeRegistry";
 import "./globals.css";
 
 const geist = Geist({
@@ -8,8 +8,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Premium Floors - Hard Flooring Specialists",
-  description: "Australia's largest wholesale supplier of timber & timber look flooring",
+  title: "W7 Design Floors - Hard Flooring Specialists",
+  description:
+    "Australia's largest wholesale supplier of timber & timber look flooring",
 };
 
 export default function RootLayout({
@@ -20,9 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={geist.className}>
-        <ThemeRegistry>
-          {children}
-        </ThemeRegistry>
+        <ThemeRegistry>{children}</ThemeRegistry>
       </body>
     </html>
   );
