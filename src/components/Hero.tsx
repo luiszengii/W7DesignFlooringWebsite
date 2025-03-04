@@ -127,7 +127,6 @@ export default function Hero() {
                 transition: "all 0.3s ease-in-out",
                 ...animationStyle,
                 "&:hover, &:active": {
-                  transform: "scale(1.05) translateY(-2px)",
                   boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
                 },
               }}
@@ -148,7 +147,6 @@ export default function Hero() {
                 transition: "all 0.3s ease-in-out",
                 ...animationStyle,
                 "&:hover, &:active": {
-                  transform: "scale(1.05) translateY(-2px)",
                   boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.5)",
                   zIndex: 0,
                 },
