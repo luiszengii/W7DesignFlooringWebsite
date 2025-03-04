@@ -24,166 +24,17 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import Image from "next/image";
 import Copyright from "@/components/Copyright";
+import NavigationBar from "@/components/NavigationBar";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
     <Box component="div">
-      {/* Navigation Bar */}
-      <AppBar
-        position="static"
-        color="transparent"
-        elevation={1}
-        sx={{ py: 1, bgcolor: "#362b22" }}
-      >
-        <Container maxWidth="lg">
-          <Toolbar disableGutters sx={{ color: "#362b22" }}>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ flexGrow: 1, fontWeight: "bold", color: "#ffffff" }}
-            >
-              PREMIUM FLOORS
-            </Typography>
-            <Button
-              color="inherit"
-              endIcon={<KeyboardArrowDownIcon />}
-              sx={{ mx: 1, color: "#ffffff" }}
-            >
-              Products
-            </Button>
-            <Button
-              color="inherit"
-              endIcon={<KeyboardArrowDownIcon />}
-              sx={{ mx: 1, color: "#ffffff" }}
-            >
-              Brands
-            </Button>
-            <Button
-              color="inherit"
-              endIcon={<KeyboardArrowDownIcon />}
-              sx={{ mx: 1, color: "#ffffff" }}
-            >
-              Resources
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ minWidth: "auto", ml: 1, color: "#ffffff" }}
-            >
-              <SearchIcon />
-            </Button>
-          </Toolbar>
-        </Container>
-      </AppBar>
+      <NavigationBar />
+      <Hero />
 
-      {/* Hero Section */}
+      {/* Product Categories */}
       <Container maxWidth="lg" sx={{ mt: 8, mb: 6 }}>
-        <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
-            <Typography
-              variant="h2"
-              component="h1"
-              gutterBottom
-              sx={{
-                fontWeight: "bold",
-                fontSize: { xs: "2.5rem", md: "3.5rem" },
-              }}
-            >
-              Hard Flooring Specialists
-            </Typography>
-            <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-              Australia&apos;s largest wholesale supplier of timber & timber
-              look flooring including laminate, hybrid, bamboo, cork and vinyl.
-            </Typography>
-
-            {/* Search Bar */}
-            <Paper
-              elevation={0}
-              sx={{
-                display: "flex",
-                mb: 6,
-                border: "1px solid #e0e0e0",
-                borderRadius: "4px",
-                overflow: "hidden",
-              }}
-            >
-              <TextField
-                fullWidth
-                placeholder="Search site"
-                variant="outlined"
-                InputProps={{
-                  sx: { borderRadius: 0 },
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <SearchIcon />
-                    </InputAdornment>
-                  ),
-                }}
-                sx={{
-                  "& .MuiOutlinedInput-notchedOutline": { border: "none" },
-                }}
-              />
-              <Button
-                variant="contained"
-                color="primary"
-                sx={{
-                  borderRadius: 0,
-                  px: 3,
-                }}
-              >
-                Search
-              </Button>
-            </Paper>
-          </Grid>
-
-          {/* Hero Images */}
-          <Grid item xs={12} md={6}>
-            <Box
-              sx={{
-                position: "relative",
-                height: { xs: "450px", md: "600px" },
-                mb: 2,
-              }}
-            >
-              {/* Main image */}
-              <Box
-                component="img"
-                src="/placeholder-main.jpg"
-                alt="Elegant interior with herringbone wooden flooring"
-                sx={{
-                  width: "85%",
-                  height: "80%",
-                  objectFit: "cover",
-                  borderRadius: "8px",
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  zIndex: 1,
-                  boxShadow: "0px 4px 12px rgba(0,0,0,0.1)",
-                }}
-              />
-
-              {/* Secondary image - overlapping */}
-              <Box
-                component="img"
-                src="/placeholder-secondary.jpg"
-                alt="Luxurious bathroom with wooden flooring"
-                sx={{
-                  width: "60%",
-                  height: "50%",
-                  objectFit: "cover",
-                  borderRadius: "8px",
-                  position: "absolute",
-                  bottom: 0,
-                  right: 0,
-                  zIndex: 2,
-                  boxShadow: "0px 4px 12px rgba(0,0,0,0.15)",
-                }}
-              />
-            </Box>
-          </Grid>
-        </Grid>
-
-        {/* Product Categories */}
         <Typography
           variant="h4"
           component="h2"
@@ -191,7 +42,11 @@ export default function Home() {
         >
           Our Products
         </Typography>
+      </Container>
 
+      {/* Rest of the code remains the same */}
+      {/* Hero Section */}
+      <Container maxWidth="lg" sx={{ mt: 8, mb: 6 }}>
         {/* Product Gallery */}
         <Grid container spacing={3}>
           {/* Row 1 */}
