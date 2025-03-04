@@ -1,16 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  Typography,
-  Grid,
-  TextField,
-  Box,
-  InputAdornment,
-  Paper,
-  Button,
-  Container,
-} from "@mui/material";
+import { Typography, Grid, TextField, Box, InputAdornment, Paper, Button, Container } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 export default function Hero() {
@@ -18,29 +9,36 @@ export default function Hero() {
   const imageRef = useRef(null);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      if (imageRef.current) {
-        const element = imageRef.current as HTMLElement;
-        const rect = element.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const distance = 1 - rect.top / windowHeight;
-        setScrollProgress(Math.min(Math.max(distance * 1.5, 0), 1.5));
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (imageRef.current) {
+            const element = imageRef.current as HTMLElement;
+            const rect = element.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const elementCenter = rect.top + rect.height / 2;
+            const distanceFromCenter = (windowHeight / 2 - elementCenter) / (windowHeight / 2);
+            setScrollProgress(Math.min(Math.max(distanceFromCenter, 0), 1));
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const animationStyle = {
-    transform: `scale(${1 + scrollProgress * 0.2}) translateY(${
-      -2 * scrollProgress
-    }px)`,
-    boxShadow: `0px ${14 * scrollProgress}px ${
-      24 * scrollProgress
-    }px rgba(0, 0, 0, ${0.4 * scrollProgress})`,
+    transform: `scale(${1 + scrollProgress * 0.15}) translateY(${scrollProgress * 20}px)`,
+    boxShadow: `0px ${15 * scrollProgress}px ${30 * scrollProgress}px rgba(0, 0, 0, ${0.3 * scrollProgress})`,
+    willChange: "transform, box-shadow",
+    transition: "none",
   };
 
   return (
@@ -59,8 +57,7 @@ export default function Hero() {
             Hard Flooring Specialists
           </Typography>
           <Typography variant="h6" color="text.secondary" sx={{ mb: 4 }}>
-            Australia&apos;s largest wholesale supplier of timber & timber look
-            flooring including laminate, hybrid, bamboo, cork and vinyl.
+            Australia&apos;s largest wholesale supplier of timber & timber look flooring including laminate, hybrid, bamboo, cork and vinyl.
           </Typography>
 
           <Paper
@@ -124,11 +121,7 @@ export default function Hero() {
                 top: 0,
                 left: 0,
                 zIndex: -1,
-                transition: "all 0.3s ease-in-out",
                 ...animationStyle,
-                "&:hover, &:active": {
-                  boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.4)",
-                },
               }}
             />
             <Box
@@ -144,12 +137,7 @@ export default function Hero() {
                 bottom: 0,
                 right: 0,
                 zIndex: 0,
-                transition: "all 0.3s ease-in-out",
                 ...animationStyle,
-                "&:hover, &:active": {
-                  boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.5)",
-                  zIndex: 0,
-                },
               }}
             />
           </Box>
