@@ -82,7 +82,7 @@ export default function Hero() {
           >
             <Box
               component="img"
-              src="/interior.jpg"
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2758&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Elegant interior with herringbone wooden flooring"
               sx={{
                 width: "85%",
@@ -103,7 +103,7 @@ export default function Hero() {
             />
             <Box
               component="img"
-              src="/interior2.jpg"
+              src="https://images.unsplash.com/photo-1556702571-3e11dd2b1a92?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww"
               alt="Luxurious bathroom with wooden flooring"
               sx={{
                 width: "50%",

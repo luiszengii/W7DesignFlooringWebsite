@@ -53,7 +53,7 @@ export default function ProductGallery() {
         <GridItem className="span-two">
           <CardMedia
             component="img"
-            image="/timber-flooring.jpg"
+            image="https://unsplash.com/photos/a-piece-of-wood-that-has-been-cut-in-half-_-H2GOBn3TU"
             alt="Timber Flooring"
           />
           <CardContent>
@@ -65,7 +65,7 @@ export default function ProductGallery() {
         <GridItem>
           <CardMedia
             component="img"
-            image="/laminate-flooring.jpg"
+            image="https://images.unsplash.com/photo-1583418007992-a8e33a92e7ad?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29vZHxlbnwwfHwwfHx8MA%3D%3D"
             alt="Laminate Flooring"
           />
           <CardContent>
@@ -77,7 +77,7 @@ export default function ProductGallery() {
         <GridItem>
           <CardMedia
             component="img"
-            image="/hybrid-flooring.jpg"
+            image="https://images.unsplash.com/photo-1597113366853-fea190b6cd82?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d29vZHxlbnwwfHwwfHx8MA%3D%3D"
             alt="Hybrid Flooring"
           />
           <CardContent>
@@ -89,7 +89,7 @@ export default function ProductGallery() {
         <GridItem>
           <CardMedia
             component="img"
-            image="/vinyl-flooring.jpg"
+            image="https://images.unsplash.com/photo-1567080586917-e6ab6aa0df85?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d29vZHxlbnwwfHwwfHx8MA%3D%3D"
             alt="Vinyl Flooring"
           />
           <CardContent>
@@ -101,7 +101,7 @@ export default function ProductGallery() {
         <GridItem className="span-two">
           <CardMedia
             component="img"
-            image="/premium-collection.jpg"
+            image="https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHdvb2R8ZW58MHx8MHx8fDA%3D"
             alt="Premium Collection"
           />
           <CardContent>
@@ -113,7 +113,7 @@ export default function ProductGallery() {
         <GridItem>
           <CardMedia
             component="img"
-            image="/bamboo-flooring.jpg"
+            image="https://images.unsplash.com/photo-1506508618093-6fe5ce3def4c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdvb2R8ZW58MHx8MHx8fDA%3D"
             alt="Bamboo Flooring"
           />
           <CardContent>
@@ -125,7 +125,7 @@ export default function ProductGallery() {
         <GridItem>
           <CardMedia
             component="img"
-            image="/special-edition.jpg"
+            image="https://images.unsplash.com/photo-1533035350251-aa8b8e208d95?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdvb2R8ZW58MHx8MHx8fDA%3D"
             alt="Special Edition"
           />
           <CardContent>
