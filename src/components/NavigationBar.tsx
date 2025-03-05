@@ -1,26 +1,27 @@
 "use client";
 
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Container,
-  Box,
-} from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Container, Box, IconButton, Menu, MenuItem } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import MenuIcon from "@mui/icons-material/Menu";
+import React from "react";
 
 export default function NavigationBar() {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <AppBar
-      position="static"
-      color="transparent"
-      elevation={1}
-      sx={{ py: 1, bgcolor: "#362b22" }}
-    >
+    <AppBar position="static" color="transparent" elevation={1} sx={{ py: 1, bgcolor: "#362b22" }}>
       <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ color: "#362b22" }}>
+          {/* Logo section remains unchanged */}
           <Typography
             variant="h6"
             component="div"
@@ -54,8 +55,7 @@ export default function NavigationBar() {
                   "&:hover, &:active": {
                     color: "rgb(255, 255, 255)",
                     letterSpacing: "0.02em",
-                    textShadow:
-                      "0 0 3px rgba(255, 255, 255, 0.35), 0 0 12px rgba(255, 255, 255, 0.2), 0 0 18px rgba(255, 255, 255, 0.1)",
+                    textShadow: "0 0 3px rgba(255, 255, 255, 0.35), 0 0 12px rgba(255, 255, 255, 0.2), 0 0 18px rgba(255, 255, 255, 0.1)",
                     transform: "scale(1.01) translateY(-0.5px)",
                   },
                 }}
@@ -76,33 +76,49 @@ export default function NavigationBar() {
               </Box>
             </Box>
           </Typography>
-          <Button
-            color="inherit"
-            endIcon={<KeyboardArrowDownIcon />}
-            sx={{ mx: 1, color: "#ffffff" }}
-          >
-            Products
-          </Button>
-          <Button
-            color="inherit"
-            endIcon={<KeyboardArrowDownIcon />}
-            sx={{ mx: 1, color: "#ffffff" }}
-          >
-            Brands
-          </Button>
-          <Button
-            color="inherit"
-            endIcon={<KeyboardArrowDownIcon />}
-            sx={{ mx: 1, color: "#ffffff" }}
-          >
-            Resources
-          </Button>
-          <Button
-            color="inherit"
-            sx={{ minWidth: "auto", ml: 1, color: "#ffffff" }}
-          >
-            <SearchIcon />
-          </Button>
+
+          {/* Desktop menu */}
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Button color="inherit" endIcon={<KeyboardArrowDownIcon />} sx={{ mx: 1, color: "#ffffff" }}>
+              Products
+            </Button>
+            <Button color="inherit" endIcon={<KeyboardArrowDownIcon />} sx={{ mx: 1, color: "#ffffff" }}>
+              Brands
+            </Button>
+            <Button color="inherit" endIcon={<KeyboardArrowDownIcon />} sx={{ mx: 1, color: "#ffffff" }}>
+              Resources
+            </Button>
+            <Button color="inherit" sx={{ minWidth: "auto", ml: 1, color: "#ffffff" }}>
+              <SearchIcon />
+            </Button>
+          </Box>
+
+          {/* Mobile menu */}
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+            <IconButton size="large" aria-label="menu" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleMenu} sx={{ color: "#ffffff" }}>
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Products</MenuItem>
+              <MenuItem onClick={handleClose}>Brands</MenuItem>
+              <MenuItem onClick={handleClose}>Resources</MenuItem>
+              <MenuItem onClick={handleClose}>Search</MenuItem>
+            </Menu>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
