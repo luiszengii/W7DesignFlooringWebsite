@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "W7 Design Flooring",
     images: [
       {
-        url: "/public/vinyl-flooring.jpg", // Add your OG image
+        url: "/floors/vinyl-flooring.jpg", // Add your OG image
         width: 1200,
         height: 630,
       },

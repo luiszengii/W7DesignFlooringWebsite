@@ -52,7 +52,7 @@ export default function Home() {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
           name: "W7 Design Flooring",
-          image: "https://w7designflooring.com/logo.jpg",
+          image: "https://w7designflooring.com/svgs/logo.ico",
           description: "Melbourne's premier flooring specialist offering hardwood, laminate, vinyl & hybrid flooring solutions.",
           address: {
             "@type": "3152",
