@@ -33,6 +33,23 @@ export default function NavigationBar() {
             }}
           >
             <Box
+              component="img"
+              // src="/images/logo.png"
+              src="/images/logo-trans.png"
+              // src="/images/logo-white.png"
+              // src="/images/logo-white-trans.png"
+              alt="W7 Design Flooring Logo"
+              sx={{
+                height: "50px",
+                width: "auto",
+                transition: "transform 0.3s ease-in-out",
+                "&:hover": {
+                  transform: "scale(1.05)"
+                }
+              }}
+            />
+            {/* Original text logo
+            <Box
               component="span"
               sx={{
                 position: "relative",
@@ -75,6 +92,7 @@ export default function NavigationBar() {
                 FLOORING
               </Box>
             </Box>
+            */}
           </Typography>
 
           {/* Desktop menu */}
